@@ -1,0 +1,62 @@
+body {
+  background-color: black;
+  display: flex;
+  text-align: center;
+  margin: auto;
+  max-width: 1000px;
+  justify-content: center;
+  align-items: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  color: beige;
+  font-size: 1.1rem;
+}
+
+#gridcontainer {
+  width: 500px;
+  border: 2px dashed grey;
+  min-height: 500px;
+  display: grid;
+  gap: 10px;
+  justify-content: space-around;
+  align-items: stretch;
+}
+
+#box1 {
+  background-color: lime;
+  color: black;
+  padding: 10px;
+}
+
+#box2 {
+  background-color: coral;
+  border: 1px solid;
+  padding: 10px;
+}
+#box3 {
+  background-color: plum;
+  border: 1px solid;
+  padding: 10px;
+}
+#box4 {
+  background-color: plum;
+  border: 1px solid;
+  padding: 10px;
+}
+#box5 {
+  background-color: plum;
+  border: 1px solid;
+  padding: 10px;
+}
+#box6 {
+  background-color: plum;
+  border: 1px solid;
+  padding: 10px;
+}
+#box7 {
+  background-color: plum;
+  border: 1px solid;
+  padding: 10px;
+}

@@ -1,0 +1,25 @@
+body {
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 0 auto;
+  padding: 3rem;
+}
+
+h1 {
+  font-size: large;
+  font-weight: 700;
+}
+p {
+  width: 400px;
+  border: 1px solid crimson;
+  margin: 0 auto;
+  min-height: 200px;
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: beige;
+  border-bottom: 3px dashed rgba(0, 128, 0, 316);
+}
+
+.center {
+  line-height: 200px;
+}

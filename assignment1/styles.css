@@ -1,0 +1,84 @@
+/* body design */
+body {
+  background-color: rgb(255, 235, 209);
+  font-family: "Merriweather Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* heading 1 design */
+h1 {
+  font-family: "Frank Ruhl Libre", serif;
+  text-align: center;
+  color: #464785;
+  padding: 20px 30px;
+  border: solid 5px #2d2e83;
+  max-width: 700px;
+  width: 100%;
+  margin: 0 auto;
+  font-size: 2.5rem;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+/* change the boxes into grid */
+.container {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+/* whole section padding */
+section {
+  display: block;
+  padding: 20px;
+}
+/* heading 2 design */
+h2 {
+  font-size: 1.25rem;
+  color: #f6f6f8;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+/* paragraph design */
+p,
+ul {
+  font-size: 1rem;
+  color: #e2dddd;
+  line-height: 1.6;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: 600;
+}
+/* box color, padding, and shadow */
+.box1,
+.box2,
+.box3,
+.box4,
+.box5,
+.box6,
+.box7,
+.box8,
+.box9,
+.box10,
+.box11,
+.box12,
+.box13 {
+  background-color: rgb(34, 38, 78);
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  margin: 10px 0;
+}
+/* image inside box = padding  */
+.box-image {
+  width: 50%;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+
+  /* Center the image horizontally */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
