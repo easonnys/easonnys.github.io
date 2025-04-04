@@ -5,6 +5,7 @@ body {
   margin: 0;
   padding: 0;
 }
+
 /* heading 1 design */
 h1 {
   font-family: "Frank Ruhl Libre", serif;
@@ -21,25 +22,29 @@ h1 {
   text-transform: uppercase;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
-/* change the boxes into grid */
+
+/* change the boxes into responsive grid with more space */
 .container {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 30px;
+  padding: 30px;
 }
+
 /* whole section padding */
 section {
   display: block;
   padding: 20px;
 }
+
 /* heading 2 design */
 h2 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   color: #f6f6f8;
   font-style: italic;
   margin-bottom: 10px;
 }
+
 /* paragraph design */
 p,
 ul {
@@ -49,6 +54,7 @@ ul {
   font-family: "Times New Roman", Times, serif;
   font-weight: 600;
 }
+
 /* box color, padding, and shadow */
 .box1,
 .box2,
@@ -64,18 +70,20 @@ ul {
 .box12,
 .box13 {
   background-color: rgb(34, 38, 78);
-  border-radius: 8px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  padding: 25px;
   margin: 10px 0;
+  min-height: 450px; /* give boxes more height */
 }
-/* image inside box = padding  */
+
+/* image inside box */
 .box-image {
-  width: 50%;
-  max-height: 200px;
+  width: 100%;
+  max-height: 300px;
   object-fit: cover;
-  border-radius: 5px;
-  margin-bottom: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
 
   /* Center the image horizontally */
   display: block;
