@@ -17,15 +17,27 @@
     <script src="script.js"></script>
   </head>
   <body>
-    <div>
+    <div class="container">
       <h1>Relax & Study</h1>
       <audio id="audio-player" controls>
         <source src="media/study.mp3" type="audio/mp3" />
         Your browser doesn't support this audio file.
       </audio>
-      <!-- Focus timer UI for productivity sessions -->
-      <div class="timer">
-        <label for="time-select"></label>
+      <!-- timer UI for productivity sessions -->
+      <div class="focus-timer">
+        <label for="time-select">Focus Timer:</label>
+        <select id="time-select">
+          <option value="15">15 min</option>
+          <option value="30">30 min</option>
+          <option value="45">45 min</option>
+          <option value="60">1 hour</option>
+          <option value="120">2 hours</option>
+        </select>
+
+        <button id="start-button" onclick="startTimer()">Start</button>
+        <!-- THIS is the start button -->
+        <button id="reset-button" onclick="resetTimer()">Reset</button>
+        <span id="countdown-display">0:00</span>
       </div>
     </div>
   </body>

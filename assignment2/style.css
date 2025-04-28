@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Quicksand", sans-serif;
   background-color: #dbeef3;
@@ -10,8 +16,77 @@ body {
 }
 
 h1 {
-  font-family: "Gloock", serif;
+  font-family: Gloock;
   font-size: 2rem;
   margin-bottom: 1rem;
   color: #3c4f65;
+}
+
+.container {
+  background-color: #fdf6e3;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+}
+
+audio {
+  width: 100%;
+  margin: 20px 0;
+  border-radius: 20px;
+}
+
+/* Focus timer styling */
+.focus-timer {
+  margin-top: 1rem;
+}
+
+.focus-timer label {
+  font-weight: 500;
+  margin-right: 0.5rem;
+}
+
+.focus-timer select {
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  background-color: #b2dae4;
+  color: #6b6b6b;
+  font-weight: bold;
+  font-family: gloock;
+}
+
+.focus-timer button {
+  padding: 0.5rem;
+  background-color: #151c5c;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  font-family: Quicksand;
+  font-weight: bold;
+}
+
+.focus-timer button:hover {
+  background-color: #4d56ce;
+}
+
+#countdown-display {
+  display: block;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #555;
+  font-family: Quicksand;
+}
+
+label {
+  font-family: Quicksand;
+  font-weight: bold;
 }
