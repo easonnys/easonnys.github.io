@@ -95,7 +95,6 @@ function pauseTimer() {
   const button = document.querySelector("#start-button"); // Get start button
   const display = document.querySelector("#countdown-display");
   clearInterval(interval); // Stop the timer as it is
-  document.querySelector("#audio-player").pause(); // Pause music
   button.textContent = "Start"; // Change the button text to Start
   isTimerRunning = false; // Pause the timer
   display.classList.remove("pulsing"); // Remove animation
