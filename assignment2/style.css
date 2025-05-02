@@ -12,15 +12,8 @@ body {
 
 body {
   font-family: "Quicksand", sans-serif;
-  background: linear-gradient(
-    135deg,
-    #ff7f50,
-    #ff6f3c,
-    #ff9c35,
-    #ffcc33,
-    #b35c3b
-  );
-  background-size: 400% 400%;
+  background: url("media/autumn.webp");
+  background-size: cover;
   animation: bgMove 30s ease infinite;
   color: #3d3d3d;
   display: flex;
