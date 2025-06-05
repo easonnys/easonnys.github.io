@@ -764,14 +764,114 @@ body::after {
   }
 }
 
-#globalVisualizer {
+/* Recorded Beat Section */
+.recorded-beat {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: rgba(36, 35, 35, 0.15);
+  color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  z-index: 10;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Pulsing animation */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.6);
+  }
+}
+
+.recorded-beat h2 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #e0e0e0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+.audio-element {
+  width: 100%;
+  max-width: 280px;
+  margin-top: 10px;
+  outline: none;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  transition: box-shadow 0.3s ease;
+}
+
+.audio-element:hover {
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .recorded-beat {
+    top: 10px;
+    right: 10px;
+    padding: 15px;
+    font-size: 1rem;
+  }
+
+  .audio-element {
+    width: 220px;
+  }
+}
+
+/* Button Styles */
+.start-jamming-btn {
+  background: linear-gradient(135deg, #ff4d4d, #ffb34d);
+  color: #ffffff;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.start-jamming-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.start-jamming-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Subtle glow animation */
+.start-jamming-btn::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* full width of .dj-frame */
-  height: 100%; /* full height of .dj-frame */
-  pointer-events: none; /* so clicks pass through */
-  z-index: 10; /* above pads */
-  background: transparent;
-  display: block;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0)
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.start-jamming-btn:hover::before {
+  opacity: 1;
 }

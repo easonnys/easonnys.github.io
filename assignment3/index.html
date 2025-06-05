@@ -8,7 +8,6 @@
   </head>
   <body>
     <div class="dj-frame">
-      <canvas id="globalVisualizer"></canvas>
       <div class="top-bar"></div>
 
       <!-- Screws -->
@@ -138,15 +137,26 @@
     <div class="tutorial-overlay" id="tutorial">
       <div class="tutorial-content">
         <p>
-          Press keys <span class="key">Q</span>, <span class="key">W</span>,
+          <strong>Welcome to DJ Soundboard!</strong><br />
+          Use the keys <span class="key">Q</span>, <span class="key">W</span>,
           <span class="key">E</span>, <span class="key">A</span>,
           <span class="key">S</span>, <span class="key">D</span>,
           <span class="key">Z</span>, <span class="key">X</span>,
-          <span class="key">C</span> to play sounds!
+          <span class="key">C</span> to start your music journey.
         </p>
-        <p>Click to start jamming!</p>
+        <button id="startButton" class="start-jamming-btn">Click to start JAMMING!</button>
       </div>
     </div>
+    <!-- Recorded Beat Section -->
+    <div class="recorded-beat" id="recorded-beat">
+      <h2>Example</h2>
+      <audio controls class="audio-playback" id="recordedAudio">
+        <source src="sfx/examplebeat.wav" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </h2>
+    </div>
+
+
     <script src="script.js"></script>
   </body>
 </html>
