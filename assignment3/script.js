@@ -1,7 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
   const tutorial = document.getElementById("tutorial");
+  const startButton = document.getElementById("startButton");
 
-  tutorial.addEventListener("click", () => {
+  // Load click sound
+  const clickSound = new Audio("sfx/startsound.mp3");
+
+  // Play sound on button click
+  startButton.addEventListener("click", () => {
+    clickSound.currentTime = 0; // Reset sound to start
+    clickSound.play(); // Play the sound
+
     tutorial.style.opacity = "0";
     setTimeout(() => {
       tutorial.style.display = "none";
