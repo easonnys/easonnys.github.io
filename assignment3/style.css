@@ -570,7 +570,7 @@ body::after {
 }
 
 /* Decorative screws (for realism) */
-.screw {d
+.screw {
   width: 16px; /* Width of the screw */
   height: 16px; /* Height of the screw */
   background: radial-gradient(
@@ -682,7 +682,7 @@ body::after {
 }
 
 /* Badge Styling */
-.badge {d
+.badge {
   font-size: 0.9rem; /* Text size within badge */
   color: #ffffff; /* Text color */
   background: linear-gradient(135deg, #444, #111); /* Gradient background */
