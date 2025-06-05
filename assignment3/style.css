@@ -165,124 +165,136 @@ body::after {
   transition: all 0.2s ease-in-out;
 }
 
-/* Slider container */
+/* Slider container for the volume controls at the bottom of the screen */
 .slider-container {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(120px * 9 + 20px * 8);
-  height: 140px;
-  display: flex;
-  justify-content: space-between;
-  gap: 8px;
+  position: fixed; /* Fixed position to stay at the bottom */
+  bottom: 20px; /* Distance from the bottom of the viewport */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center alignment adjustment */
+  width: calc(120px * 9 + 20px * 8); /* Width based on button size and gap */
+  height: 140px; /* Height of the slider container */
+  display: flex; /* Flexbox for horizontal alignment */
+  justify-content: space-between; /* Equal spacing between sliders */
+  gap: 8px; /* Gap between each slider */
   background: linear-gradient(
     135deg,
     rgba(30, 30, 30, 0.8),
     rgba(45, 45, 45, 0.8)
-  );
-  padding: 15px 25px;
-  border-radius: 30px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-  align-items: center;
-  overflow: visible;
+  ); /* Subtle gradient background */
+  padding: 15px 25px; /* Padding inside container */
+  border-radius: 30px; /* Rounded corners */
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  z-index: 1000; /* Ensure it appears on top */
+  align-items: center; /* Align sliders vertically centered */
+  overflow: visible; /* Allow overflow if needed */
 }
-
-/* Each slider wrapper */
+/* Wrapper for each individual slider */
 .slider-container > div {
-  flex-shrink: 0;
-  width: 120px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-shrink: 0; /* Prevent shrinking */
+  width: 120px; /* Fixed width */
+  display: flex; /* Flexbox for alignment */
+  justify-content: center; /* Center slider inside wrapper */
+  align-items: center; /* Vertical alignment */
 }
 
-/* Volume slider vertical style */
+/* Style for the vertical volume sliders */
 .volume-slider {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 160px;
-  height: 8px;
-  border-radius: 10px;
-  outline: none;
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  background: radial-gradient(circle, #888, #666);
-  transform-origin: center;
-  transform: rotate(-90deg);
-  margin: 0;
+  -webkit-appearance: none; /* Remove default appearance */
+  appearance: none; /* Remove default appearance in other browsers */
+  width: 160px; /* Length of the slider track */
+  height: 8px; /* Thickness of the slider */
+  border-radius: 10px; /* Rounded edges */
+  outline: none; /* Remove outline */
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5); /* Inner shadow for depth */
+  cursor: pointer; /* Cursor change on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for color */
+  background: radial-gradient(
+    circle,
+    #888,
+    #666
+  ); /* Radial gradient for track */
+  transform-origin: center; /* Transform origin for rotation */
+  transform: rotate(-90deg); /* Rotate slider to be vertical */
+  margin: 0; /* Remove default margin */
 }
 
+/* Track style for WebKit browsers */
 .volume-slider::-webkit-slider-runnable-track {
-  width: 160px;
-  height: 8px;
-  background: inherit;
-  border-radius: 10px;
+  width: 160px; /* Track length */
+  height: 8px; /* Track thickness */
+  background: inherit; /* Inherit background from slider */
+  border-radius: 10px; /* Rounded edges */
 }
 
+/* Thumb style for WebKit browsers */
 .volume-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 30px;
-  height: 16px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 0 12px #fff;
-  transition: all 0.3s ease;
-  margin-top: -4px;
-  transform: rotate(90deg);
+  -webkit-appearance: none; /* Remove default appearance */
+  appearance: none; /* Remove default appearance */
+  width: 30px; /* Width of the thumb */
+  height: 16px; /* Height of the thumb */
+  background: rgba(255, 255, 255, 0.8); /* Thumb color */
+  border: 2px solid #ddd; /* Thumb border */
+  border-radius: 10px; /* Thumb rounded edges */
+  box-shadow: 0 0 12px #fff; /* Shadow effect around thumb */
+  transition: all 0.3s ease; /* Smooth transition for thumb style */
+  margin-top: -4px; /* Position adjustment */
+  transform: rotate(90deg); /* Correct rotation for vertical slider */
 }
 
+/* Hover effect for thumb in WebKit */
 .volume-slider::-webkit-slider-thumb:hover {
-  box-shadow: 0 0 18px #fff;
+  box-shadow: 0 0 18px #fff; /* Larger glow on hover */
 }
 
-/* Firefox styles */
+/* Track style for Firefox */
 .volume-slider::-moz-range-track {
-  width: 160px;
-  height: 8px;
-  background: inherit;
-  border-radius: 10px;
+  width: 160px; /* Track length */
+  height: 8px; /* Track thickness */
+  background: inherit; /* Inherit background from slider */
+  border-radius: 10px; /* Rounded edges */
 }
 
+/* Thumb style for Firefox */
 .volume-slider::-moz-range-thumb {
-  width: 30px;
-  height: 16px;
-  background: rgba(255, 255, 255, 0.8);
-  border: 2px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 0 12px #fff;
-  transition: all 0.3s ease;
-  transform: rotate(90deg);
+  width: 30px; /* Width of the thumb */
+  height: 16px; /* Height of the thumb */
+  background: rgba(255, 255, 255, 0.8); /* Thumb color */
+  border: 2px solid #ddd; /* Thumb border */
+  border-radius: 10px; /* Thumb rounded edges */
+  box-shadow: 0 0 12px #fff; /* Shadow effect around thumb */
+  transition: all 0.3s ease; /* Smooth transition for thumb style */
+  transform: rotate(90deg); /* Correct rotation for vertical slider */
 }
 
+/* Hover effect for thumb in Firefox */
 .volume-slider::-moz-range-thumb:hover {
-  box-shadow: 0 0 18px #fff;
+  box-shadow: 0 0 18px #fff; /* Larger glow on hover */
 }
 
+/* Animation for pulsing glow */
 @keyframes pulseGlow {
   0%,
   100% {
-    box-shadow: 0 0 12px #fff;
+    box-shadow: 0 0 12px #fff; /* Default glow */
   }
   50% {
-    box-shadow: 0 0 24px #fff;
+    box-shadow: 0 0 24px #fff; /* Brightest glow at midpoint */
   }
 }
 
+/* Apply pulsing glow animation to WebKit thumbs */
 .volume-slider::-webkit-slider-thumb {
-  animation: pulseGlow 3s ease-in-out infinite;
+  animation: pulseGlow 3s ease-in-out infinite; /* Infinite pulse */
 }
 
+/* Apply pulsing glow animation to Firefox thumbs */
 .volume-slider::-moz-range-thumb {
-  animation: pulseGlow 3s ease-in-out infinite;
+  animation: pulseGlow 3s ease-in-out infinite; /* Infinite pulse */
 }
 
+/* Progress style for Firefox sliders */
 .volume-slider::-moz-range-progress {
-  background-color: currentColor;
+  background-color: currentColor; /* Matches current color */
 }
 
 /* Color classes for buttons and sliders */
@@ -522,90 +534,102 @@ body::after {
 
 /* DJ panel frame */
 .dj-frame {
-  position: absolute;
-  top: 10%;
-  width: 500px;
-  height: 550px;
-  border-radius: 30px;
-  border: 6px solid #333;
-  box-shadow: inset 0 0 40px #000a, 0 0 30px #111;
-  background: linear-gradient(145deg, #111 10%, #222 90%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-  padding: 40px;
-  animation: padGlow 5s ease-in-out infinite;
+  position: absolute; /* Positions the DJ frame absolutely on the page */
+  top: 10%; /* Position from the top of the page */
+  width: 500px; /* Fixed width of the panel */
+  height: 550px; /* Fixed height of the panel */
+  border-radius: 30px; /* Rounded corners for the panel */
+  border: 6px solid #333; /* Solid border with dark colour */
+  box-shadow: inset 0 0 40px #000a, 0 0 30px #111; /* Shadow for depth and realism */
+  background: linear-gradient(
+    145deg,
+    #111 10%,
+    #222 90%
+  ); /* Dark gradient background */
+  display: flex; /* Use flexbox for child alignment */
+  flex-direction: column; /* Align children in a column vertically */
+  align-items: center; /* Center align children horizontally */
+  justify-content: center; /* Center align children vertically */
+  z-index: 10; /* Position on top of other elements */
+  padding: 40px; /* Space inside the panel */
+  animation: padGlow 5s ease-in-out infinite; /* Infinite glowing animation */
 }
+
 @keyframes padGlow {
   0%,
   100% {
     box-shadow: 0 0 10px #00ffcc88,
       /* soft teal glow */ inset 0 0 20px #00ffcc55; /* subtle inner glow */
-    border-color: #00ffcc;
+    border-color: #00ffcc; /* Teal border color */
   }
   50% {
-    box-shadow: 0 0 25px #00ffcccc, inset 0 0 30px #00ffcc88;
-    border-color: #00ffccee;
+    box-shadow: 0 0 25px #00ffcccc,
+      /* brighter glow at midpoint */ inset 0 0 30px #00ffcc88; /* brighter inner glow */
+    border-color: #00ffccee; /* Lighter teal border color during animation */
   }
 }
 
 /* Decorative screws (for realism) */
 .screw {
-  width: 16px;
-  height: 16px;
-  background: radial-gradient(circle, #333, #000 70%);
-  border-radius: 50%;
-  position: absolute;
-  z-index: 10;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-  overflow: hidden;
+  width: 16px; /* Width of the screw */
+  height: 16px; /* Height of the screw */
+  background: radial-gradient(
+    circle,
+    #333,
+    #000 70%
+  ); /* Radial gradient for 3D effect */
+  border-radius: 50%; /* Rounded to give a circular appearance */
+  position: absolute; /* Position screws absolutely according to the panel */
+  z-index: 10; /* Above most elements for visibility */
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Subtle shadow for depth */
+  overflow: hidden; /* Hide overflow on pseudo-elements */
 }
 
+/* Inner shine effect using pseudo-element */
 .screw::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
+  content: ""; /* Empty content for pseudo-element */
+  position: absolute; /* Absolutely position within screw */
+  width: 100%; /* Cover full screw */
+  height: 100%; /* Cover full screw */
+  border-radius: 50%; /* Rounded to match screw */
   background: radial-gradient(
     circle,
     rgba(255, 255, 255, 0.75),
     rgba(255, 255, 255, 0.2)
-  );
-  top: 0;
-  left: 0;
-  z-index: 5;
+  ); /* Gradient for shine effect */
+  top: 0; /* Position at top */
+  left: 0; /* Position at left */
+  z-index: 5; /* Layering effect within screw */
 }
 
+/* Specific placement for screws */
 .screw.top-left {
-  top: 12px;
-  left: 12px;
+  top: 12px; /* Position from top of panel */
+  left: 12px; /* Position from left of panel */
 }
 .screw.top-right {
-  top: 12px;
-  right: 12px;
+  top: 12px; /* Position from top */
+  right: 12px; /* Position from right */
 }
 .screw.bottom-left {
-  bottom: 12px;
-  left: 12px;
+  bottom: 12px; /* Position from bottom */
+  left: 12px; /* Position from left */
 }
 .screw.bottom-right {
-  bottom: 12px;
-  right: 12px;
+  bottom: 12px; /* Position from bottom */
+  right: 12px; /* Position from right */
 }
 
 /* LED ring (decoration on buttons) */
 .sound-box::before {
-  content: "";
-  position: absolute;
-  width: 110%;
-  height: 110%;
-  border-radius: 25px;
-  border: 2px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
-  z-index: -1;
+  content: ""; /* Empty content for decoration */
+  position: absolute; /* Positioned within button */
+  width: 110%; /* Slightly larger than button */
+  height: 110%; /* Slightly larger than button */
+  border-radius: 25px; /* Rounded for a ring effect */
+  border: 2px solid rgba(255, 255, 255, 0.05); /* Subtle solid border */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05); /* Glow effect */
+  z-index: -1; /* Behind the button content */
 }
 
 /* Top glowing bar */
@@ -640,116 +664,123 @@ body::after {
   }
 }
 
+/* Overlay effect for the top bar adding a subtle glow */
 .top-bar::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent);
-  opacity: 0.5;
-  mix-blend-mode: overlay;
+  content: ""; /* Empty content for styling purposes */
+  position: absolute; /* Relative to the parent element */
+  top: 0; /* Positioned at the top */
+  left: 0; /* Positioned at the left */
+  width: 100%; /* Full width of the parent */
+  height: 100%; /* Full height of the parent */
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  ); /* Gradient effect for overlay */
+  opacity: 0.5; /* Semi-transparent overlay */
+  mix-blend-mode: overlay; /* Blend mode for visual effect */
 }
+
 /* Badge Styling */
 .badge {
-  font-size: 0.9rem;
-  color: #ffffff;
-  background: linear-gradient(135deg, #444, #111);
-  padding: 8px 16px;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  position: relative;
-  overflow: hidden;
+  font-size: 0.9rem; /* Text size within badge */
+  color: #ffffff; /* Text color */
+  background: linear-gradient(135deg, #444, #111); /* Gradient background */
+  padding: 8px 16px; /* Padding inside the badge */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+  text-transform: uppercase; /* Uppercase letters */
+  letter-spacing: 1.5px; /* Spacing between letters */
+  text-align: center; /* Centered text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions for hover effects */
+  position: relative; /* Relative to enable pseudo-element positioning */
+  overflow: hidden; /* Prevent overflow of content */
 }
 
 .badge::before {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: rgba(255, 255, 255, 0.1);
-  transform: rotate(45deg);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  content: ""; /* Empty content for styling */
+  position: absolute; /* Positioned relative to parent */
+  top: -50%; /* Start off-screen */
+  left: -50%; /* Start off-screen */
+  width: 200%; /* Cover beyond the badge */
+  height: 200%; /* Cover beyond the badge */
+  background: rgba(255, 255, 255, 0.1); /* Subtle shine */
+  transform: rotate(45deg); /* Diagonal orientation */
+  opacity: 0; /* Invisible initially */
+  transition: opacity 0.3s ease; /* Smooth opacity transition */
 }
 
 .badge:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  transform: translateY(-3px); /* Lift effect on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6); /* Enhanced shadow on hover */
 }
 
 .badge:hover::before {
-  opacity: 1;
+  opacity: 1; /* Shine effect becomes visible */
 }
 
+/* Overlay for tutorial section */
 .tutorial-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.9);
-  color: white;
-  font-size: 1.5rem;
-  z-index: 1001;
-  cursor: pointer;
-  transition: opacity 0.5s ease;
-  animation: slideIn 0.8s ease forwards;
+  position: fixed; /* Fixed position covering entire viewport */
+  top: 0; /* Covering top of viewport */
+  left: 0; /* Covering left of viewport */
+  right: 0; /* Covering right of viewport */
+  bottom: 0; /* Covering bottom of viewport */
+  display: flex; /* Flexbox for centering content */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  background: rgba(0, 0, 0, 0.9); /* Dark background for focus */
+  color: white; /* Text color within overlay */
+  font-size: 1.5rem; /* Font size for tutorial content */
+  z-index: 1001; /* Layer above most elements */
+  cursor: pointer; /* Change cursor to pointer */
+  transition: opacity 0.5s ease; /* Smooth opacity transition */
+  animation: slideIn 0.8s ease forwards; /* Animation for appearance */
 }
 
 .tutorial-content {
-  text-align: center;
-  max-width: 80%;
-  padding: 20px;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-  animation: glow 3s infinite;
+  text-align: center; /* Center text within content */
+  max-width: 80%; /* Limit width of content */
+  padding: 20px; /* Padding around content */
+  border-radius: 15px; /* Rounded corners */
+  background: rgba(255, 255, 255, 0.1); /* Transparent background */
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); /* Subtle box shadow */
+  animation: glow 3s infinite; /* Continuous glowing effect */
 }
 
 .tutorial-overlay p {
-  margin: 20px 0;
-  line-height: 1.6;
+  margin: 20px 0; /* Vertical spacing for paragraphs */
+  line-height: 1.6; /* Space between lines of text */
 }
 
 .key {
-  display: inline-block;
-  font-weight: bold;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 5px 10px;
-  border-radius: 8px;
-  margin: 0 5px;
-  animation: bounce 2s infinite ease-in-out;
+  display: inline-block; /* Inline block for styling */
+  font-weight: bold; /* Bold text */
+  background: rgba(255, 255, 255, 0.2); /* Light background */
+  padding: 5px 10px; /* Padding for keys */
+  border-radius: 8px; /* Rounded corners for keys */
+  margin: 0 5px; /* Spacing between keys */
+  animation: bounce 2s infinite ease-in-out; /* Bouncing animation */
 }
 
 @keyframes slideIn {
   from {
-    opacity: 0;
-    transform: translateY(-20%);
+    opacity: 0; /* Start invisible */
+    transform: translateY(-20%); /* Start off-screen upwards */
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    opacity: 1; /* Fade to visible */
+    transform: translateY(0); /* Move to original position */
   }
 }
 
 @keyframes glow {
   0%,
   100% {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3); /* Subtle glow */
   }
   50% {
-    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.5); /* Brighter glow at midpoint */
   }
 }
 
@@ -759,124 +790,124 @@ body::after {
   50%,
   80%,
   100% {
-    transform: translateY(0);
+    transform: translateY(0); /* Default position */
   }
   40% {
-    transform: translateY(-10px);
+    transform: translateY(-10px); /* Move upwards slightly */
   }
   60% {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Move downwards slightly */
   }
 }
 
 /* Recorded Beat Section */
 .recorded-beat {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  background: rgba(36, 35, 35, 0.15);
-  color: #fff;
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
-  text-align: center;
-  z-index: 10;
-  backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  animation: pulse 3s ease-in-out infinite;
+  position: fixed; /* Elements stay in place without scrolling */
+  top: 20px; /* Positioned from the top */
+  right: 20px; /* Positioned from the right */
+  background: rgba(36, 35, 35, 0.15); /* Transparent dark background */
+  color: #fff; /* White text color */
+  padding: 20px; /* Padding around content */
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Depth effect */
+  text-align: center; /* Center text */
+  z-index: 10; /* Layering above some elements */
+  backdrop-filter: blur(15px); /* Background blurring effect */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Border with light color */
+  animation: pulse 3s ease-in-out infinite; /* Continuous pulsing animation */
 }
 
 /* Pulsing animation */
 @keyframes pulse {
   0%,
   100% {
-    transform: scale(1);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+    transform: scale(1); /* Default scale */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4); /* Default shadow */
   }
   50% {
-    transform: scale(1.05);
-    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.6);
+    transform: scale(1.05); /* Increase size */
+    box-shadow: 0 16px 28px rgba(0, 0, 0, 0.6); /* Larger shadow at midpoint */
   }
 }
 
 .recorded-beat h2 {
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-  color: #e0e0e0;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  margin-bottom: 10px; /* Space below heading */
+  font-size: 1.5rem; /* Larger text size for heading */
+  color: #e0e0e0; /* Light gray text color */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); /* Shadow for depth */
 }
 
 .audio-element {
-  width: 100%;
-  max-width: 280px;
-  margin-top: 10px;
-  outline: none;
-  border-radius: 12px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
-  transition: box-shadow 0.3s ease;
+  width: 100%; /* Full width */
+  max-width: 280px; /* Maximum width */
+  margin-top: 10px; /* Margin above element */
+  outline: none; /* No outline */
+  border-radius: 12px; /* Rounded corners */
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); /* Depth with shadow */
+  transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
 }
 
 .audio-element:hover {
-  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.5); /* Enhanced shadow on hover */
 }
 
+/* Responsive media query for smaller devices */
 @media (max-width: 768px) {
   .recorded-beat {
-    top: 10px;
-    right: 10px;
-    padding: 15px;
-    font-size: 1rem;
+    top: 10px; /* Adjust positioning */
+    right: 10px; /* Adjust positioning */
+    padding: 15px; /* Reduce padding */
+    font-size: 1rem; /* Smaller font size */
   }
-
   .audio-element {
-    width: 220px;
+    width: 220px; /* Smaller width for audio elements */
   }
 }
 
 /* Button Styles */
 .start-jamming-btn {
-  background: linear-gradient(135deg, #ff4d4d, #ffb34d);
-  color: #ffffff;
-  padding: 12px 24px;
-  font-size: 1rem;
-  font-weight: bold;
-  border: none;
-  border-radius: 25px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
+  background: linear-gradient(135deg, #ff4d4d, #ffb34d); /* Gradient color */
+  color: #ffffff; /* Button text color */
+  padding: 12px 24px; /* Button padding */
+  font-size: 1rem; /* Button text size */
+  font-weight: bold; /* Bold text */
+  border: none; /* No border */
+  border-radius: 25px; /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  transition: all 0.3s ease; /* Smooth transition */
+  cursor: pointer; /* Pointer cursor on hover */
+  position: relative; /* Relative positioning for effects */
+  overflow: hidden; /* Hide overflow */
 }
 
 .start-jamming-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-2px); /* Slight up movement on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Enhanced shadow on hover */
 }
 
 .start-jamming-btn:active {
-  transform: translateY(1px);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px); /* Down movement on click */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2); /* Deeper shadow on click */
 }
 
 /* Subtle glow animation */
 .start-jamming-btn::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  content: ""; /* Empty content for effect */
+  position: absolute; /* Positioned within button */
+  top: 0; /* Top edge of button */
+  left: 0; /* Left edge of button */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
   background: linear-gradient(
     45deg,
     rgba(255, 255, 255, 0.3),
     rgba(255, 255, 255, 0)
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
+  ); /* Gradient overlay */
+  opacity: 0; /* Hidden initially */
+  transition: opacity 0.3s ease; /* Smooth opacity transition */
+  pointer-events: none; /* Don’t capture clicks */
 }
 
 .start-jamming-btn:hover::before {
-  opacity: 1;
+  opacity: 1; /* Become visible on hover */
 }

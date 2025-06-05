@@ -7,50 +7,34 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    <!-- Main DJ soundboard frame -->
     <div class="dj-frame">
       <div class="top-bar"></div>
-
-      <!-- Screws -->
+      <!-- Top glowing bar for visual effect -->
+      <!-- Decorative screws for realistic appearance -->
       <div class="screw top-left"></div>
       <div class="screw top-right"></div>
       <div class="screw bottom-left"></div>
       <div class="screw bottom-right"></div>
-
-      <!-- This is the grid container where sound boxes should go -->
+      <!-- Container for sound buttons -->
       <div class="container">
-        <div class="sound1">
-          <button class="sound-box"></button>
-        </div>
-        <div class="sound2">
-          <button class="sound-box"></button>
-        </div>
-        <div class="sound3">
-          <button class="sound-box"></button>
-        </div>
-        <div class="sound4">
-          <button class="sound-box"></button>
-        </div>
-        <div class="sound5">
-          <button class="sound-box"></button>
-        </div>
-        <div class="sound6">
-          <button class="sound-box"></button>
-        </div>
-        <div class="sound7">
-          <button class="sound-box"></button>
-        </div>
-        <div class="sound8">
-          <button class="sound-box"></button>
-        </div>
-        <div class="sound9">
-          <button class="sound-box"></button>
-        </div>
+        <div class="sound1"><button class="sound-box">Q</button></div>
+        <div class="sound2"><button class="sound-box">W</button></div>
+        <div class="sound3"><button class="sound-box">E</button></div>
+        <div class="sound4"><button class="sound-box">A</button></div>
+        <div class="sound5"><button class="sound-box">S</button></div>
+        <div class="sound6"><button class="sound-box">D</button></div>
+        <div class="sound7"><button class="sound-box">Z</button></div>
+        <div class="sound8"><button class="sound-box">X</button></div>
+        <div class="sound9"><button class="sound-box">C</button></div>
       </div>
-
+      <!-- Branding badge -->
       <div class="badge">NwuG 9000</div>
     </div>
 
+    <!-- Slider container for volume control -->
     <div class="slider-container">
+      <!-- Each slider corresponds to a sound, providing volume control -->
       <div class="sound1">
         <input
           type="range"
@@ -133,10 +117,12 @@
         />
       </div>
     </div>
-    <!-- Tutorial Overlay -->
+
+    <!-- Tutorial overlay shown initially -->
     <div class="tutorial-overlay" id="tutorial">
       <div class="tutorial-content">
         <p>
+          <!-- Instructions for soundboard usage -->
           <strong>Welcome to DJ Soundboard!</strong><br />
           Use the keys <span class="key">Q</span>, <span class="key">W</span>,
           <span class="key">E</span>, <span class="key">A</span>,
@@ -144,19 +130,23 @@
           <span class="key">Z</span>, <span class="key">X</span>,
           <span class="key">C</span> to start your music journey.
         </p>
-        <button id="startButton" class="start-jamming-btn">Click to start JAMMING!</button>
+        <!-- Button to start jamming and dismiss tutorial -->
+        <button id="startButton" class="start-jamming-btn">
+          Click to start JAMMING!
+        </button>
       </div>
     </div>
-    <!-- Recorded Beat Section -->
+
+    <!-- Section for playing a recorded example beat -->
     <div class="recorded-beat" id="recorded-beat">
       <h2>Example</h2>
       <audio controls class="audio-playback" id="recordedAudio">
         <source src="sfx/examplebeat.wav" type="audio/mpeg" />
         Your browser does not support the audio element.
-      </h2>
+      </audio>
     </div>
 
-
     <script src="script.js"></script>
+    <!-- JavaScript file for soundboard functionality -->
   </body>
 </html>
